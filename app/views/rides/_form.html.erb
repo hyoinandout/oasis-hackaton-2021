@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :departure %>
-    <%= form.text_field :departure %>
+    <%= form.label :departure %><br />
+    <%= form.select :departure, Ride.points.keys %>
   </div>
 
   <div class="field">
     <%= form.label :arrival %>
-    <%= form.text_field :arrival %>
+    <%= form.select :departure, Ride.points.keys %>
   </div>
 
   <div class="field">

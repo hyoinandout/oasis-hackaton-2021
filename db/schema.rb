@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_15_193138) do
+ActiveRecord::Schema.define(version: 2021_08_15_201823) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -68,8 +68,6 @@ ActiveRecord::Schema.define(version: 2021_08_15_193138) do
 
   create_table "rides", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "departure"
-    t.string "arrival"
     t.datetime "reservation"
     t.integer "min"
     t.integer "max"
@@ -78,6 +76,8 @@ ActiveRecord::Schema.define(version: 2021_08_15_193138) do
     t.boolean "samesex"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "departure"
+    t.integer "arrival"
     t.index ["user_id"], name: "index_rides_on_user_id"
   end
 

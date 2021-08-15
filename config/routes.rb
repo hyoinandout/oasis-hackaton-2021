@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :rides
+  resources :users, only: [:index, :show]
   get 'home/index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
