@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_one_attached :profile
 
   enum sex: ["None", "Male", "Female"]
+
+  has_many :teams, dependent: :destroy
 end
