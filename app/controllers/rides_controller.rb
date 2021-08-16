@@ -4,6 +4,18 @@ class RidesController < ApplicationController
   # GET /rides or /rides.json
   def index
     @rides = Ride.all
+
+    if params[:departure].present?
+      @rides = @rides.where(departure: params[:departure])
+    end
+  
+    if params[:arrival].present?
+      @rides = @rides.where(arrival: params[:arrival])
+    end
+  
+    if params[:min].present?
+      @rides = @rides.where(min: params[:min])
+    end
   end
 
   # GET /rides/1 or /rides/1.json
